@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Dual Language</string>
+    <string name="demoText" translatable="false">Changed</string>
+</resources>
