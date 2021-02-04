@@ -1,8 +1,6 @@
 package com.gadware.duallanguage;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.os.Bundle;
 
 import androidx.databinding.DataBindingUtil;
@@ -11,8 +9,6 @@ import com.gadware.duallanguage.databinding.ActivityMainBinding;
 
 public class MainActivity extends BaseLanguage {
     ActivityMainBinding binding;
-    Context context;
-    Resources resources;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,11 +21,11 @@ public class MainActivity extends BaseLanguage {
         }
         binding.languageChangeSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (binding.languageChangeSwitch.isChecked()) {
-                SharedPrefManager.getInstance(context).saveData("language", "bn");
-
+                SharedPrefManager.getInstance(this).saveData("language", "bn");
+                recreate();
             } else {
-                SharedPrefManager.getInstance(context).saveData("language", "en");
-
+                SharedPrefManager.getInstance(this).saveData("language", "en");
+                recreate();
             }
 
         });
