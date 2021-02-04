@@ -26,10 +26,10 @@ public class MainActivity extends BaseLanguage {
         binding.languageChangeSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (binding.languageChangeSwitch.isChecked()) {
                 SharedPrefManager.getInstance(context).saveData("language", "bn");
-                //context = LocaleHelper.setLocale(MainActivity.this, "bn");
+
             } else {
                 SharedPrefManager.getInstance(context).saveData("language", "en");
-                //context = LocaleHelper.setLocale(MainActivity.this, "en");
+
             }
 
         });
@@ -39,4 +39,14 @@ public class MainActivity extends BaseLanguage {
         });
 
     }
+//    @Override
+//    public void applyOverrideConfiguration(Configuration overrideConfiguration) {
+//        if (overrideConfiguration != null) {
+//            int uiMode = overrideConfiguration.uiMode;
+//            overrideConfiguration.setTo(getBaseContext().getResources().getConfiguration());
+//            overrideConfiguration.uiMode = uiMode;
+//        }
+//        super.applyOverrideConfiguration(overrideConfiguration);
+//    }
+
 }
